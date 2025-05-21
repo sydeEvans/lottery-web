@@ -46,6 +46,7 @@ const prizes = [
     count: 1000,
     title: "抽奖结束",
     text: "需要重新抽奖请配置后重置",
+    eachCount: 1, // 合并EACH_COUNT
   },
   {
     type: 1,
@@ -57,6 +58,7 @@ const prizes = [
     awards: "1st-BJ-BGM", //颁奖音乐
     ROTATE_TIME: 20000,
     circle: 8 * 6,
+    eachCount: 1, // 合并EACH_COUNT
   },
   {
     type: 2,
@@ -68,6 +70,7 @@ const prizes = [
     awards: "other-BJ-BGM", //颁奖音乐
     ROTATE_TIME: 20000,
     circle: 8 * 3,
+    eachCount: 1, // 合并EACH_COUNT
   },
   {
     type: 3,
@@ -79,6 +82,7 @@ const prizes = [
     awards: "other-BJ-BGM", //颁奖音乐
     ROTATE_TIME: 10000,
     circle: 8 * 3,
+    eachCount: 5, // 合并EACH_COUNT
   },
   {
     type: 4,
@@ -90,6 +94,7 @@ const prizes = [
     awards: "other-BJ-BGM", //颁奖音乐
     ROTATE_TIME: 10000,
     circle: 8 * 1,
+    eachCount: 5, // 合并EACH_COUNT
   },
 ];
 let luckyData = JSON.parse(localStorage.getItem("luckyData")) || {};
@@ -131,12 +136,8 @@ const background =
 // const bgVideo="//game.gtimg.cn/images/lol/act/a20220121lunarpass/bg.mp4"
 const width = window.innerWidth * 0.75;
 const height = window.innerWidth * 0.75 * 0.75;
-/**
- * 一次抽取的奖品个数与prizes对应
- */
-const EACH_COUNT = [1, 1, 1, 5, 5];
+
 export default {
-  EACH_COUNT,
   prizes,
   COMPANY,
   user,

@@ -212,7 +212,7 @@ function bindEvent() {
         addQipao("抽慢一点点～～抽奖还没结束");
         return false;
       }
-      let perCount = EACH_COUNT[currentPrizeIndex],
+      let perCount = prizes[currentPrizeIndex].eachCount,
         leftCount = basicData.leftUsers.length;
       const notAllowed = perCount > leftCount;
 
@@ -616,7 +616,7 @@ function lottery() {
   rotateBall().then(() => {
     currentLuckys = [];
     selectedCardIndex = [];
-    let perCount = EACH_COUNT[currentPrizeIndex],
+    let perCount = prizes[currentPrizeIndex].eachCount,
       luckyData = basicData.luckyUsers[currentPrize.type],
       leftCount = basicData.leftUsers.length,
       leftPrizeCount = currentPrize.count - (luckyData ? luckyData.length : 0);
@@ -706,7 +706,8 @@ function setLuckyStore(type, currentLuckys, PrizeIndex) {
 
 function changePrize() {
   let luckys = basicData.luckyUsers[currentPrize.type];
-  let luckyCount = (luckys ? luckys.length : 0) + EACH_COUNT[currentPrizeIndex];
+  let luckyCount =
+    (luckys ? luckys.length : 0) + prizes[currentPrizeIndex].eachCount;
   setPrizeData(currentPrizeIndex, luckyCount);
 }
 

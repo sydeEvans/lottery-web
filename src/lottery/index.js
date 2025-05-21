@@ -21,7 +21,6 @@ let TOTAL_CARDS,
     lotteryBar: document.querySelector("#lotteryBar"),
   },
   prizes,
-  EACH_COUNT,
   ROW_COUNT = 7,
   COLUMN_COUNT = 17,
   COMPANY,
@@ -73,7 +72,6 @@ function initStyle() {
 }
 function startMock() {
   prizes = mockData.prizes; //奖项
-  EACH_COUNT = mockData.EACH_COUNT; //抽奖公式["1","2"] 一等奖1,二等奖3
   COMPANY = mockData.COMPANY; //公司名
   HIGHLIGHT_CELL = createHighlight();
   basicData.prizes = prizes; //基础奖项配置

@@ -1022,19 +1022,12 @@ function random(num) {
 /**
  * 切换名牌人员信息
  */
-// function changeCard(cardIndex, user) {
-//   let card = threeDCards[cardIndex].element;
-
-//   card.innerHTML = `<div class="company">${COMPANY}</div><div class="name">${
-//     user[1]
-//   }</div><div class="details">${user[0]}<br/>${user[2] || "PSST"}</div>`;
-// }
 function changeCard(cardIndex, user) {
   let card = threeDCards[cardIndex].element;
-  const nameDom = `<div class="name">${user[1]
-    }</div>`
-  const companyDom = `<div class="company">${COMPANY}</div>`
-  card.innerHTML = nameDom + (COMPANY ? companyDom : '');
+  const nameDom = `<div class="name">${user[1]}</div>`;
+  const idDom = `<div class="details">${user[0]}</div>`;
+  const companyDom = `<div class="company">${COMPANY}</div>`;
+  card.innerHTML = nameDom + idDom + (COMPANY ? companyDom : '');
 }
 
 /**
